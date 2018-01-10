@@ -1,6 +1,7 @@
 {
     "template": "api-*",
     "settings": {
+        "index.refresh_interval": "1s",
         "analysis": {
             "analyzer": {
                 "default": {
@@ -11,7 +12,7 @@
         }
     },
 
-    "version": 103,
+    "version": 106,
     "mappings": {
 
         "api": {
@@ -54,6 +55,22 @@
                         "path_match": "api.params.*",
                         "mapping": {
                             "type": "keyword"
+                        }
+                    }
+                },
+                {
+                    "attrs": {
+                        "path_match": "attrs.*",
+                        "mapping": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                {
+                    "attrsint": {
+                        "path_match": "attrsint.*",
+                        "mapping": {
+                            "type": "long"
                         }
                     }
                 }
